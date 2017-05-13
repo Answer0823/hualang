@@ -1,0 +1,117 @@
+* {
+    margin:0;
+    padding:0
+}
+
+html body {
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background-color: #ddd;
+}
+
+.wutai {
+
+}
+
+.hero {
+    width:260px;
+    height:300px;
+    cursor:pointer;
+    position:absolute;
+    border-radius: 5px;
+    perspective: 1800px;
+    transition: transform 0.6s ease-in-out 0.6s,left 0.6s ease-in-out 0.6s,top 0.6s ease-in-out 0.6s;
+}
+
+
+
+.front {
+    width:100%;
+    height:100%;
+    position:absolute;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,.09);
+    transform:rotateY(0deg);
+    -ms-transform:rotateY(0deg);
+    -webkit-transform:rotateY(0deg);
+    -o-transform:rotateY(0deg);
+    transform-style: preserve-3d;
+    backface-visibility:hidden;
+    transition: transform 0.6s ease-in-out 0.6s;
+    -o-transition: transform 0.6s ease-in-out 0.6s;
+    -webkit-transition: transform 0.6s ease-in-out 0.6s;
+}
+
+.back {
+    width:100%;
+    height:100%;
+    color: #888;
+    font-size: 16px;
+    position: absolute;
+    border-radius: 10px;
+    background-color: #fff;
+    transform:rotateY(-180deg);
+    -ms-transform:rotateY(-180deg);
+    -webkit-transform:rotateY(-180deg);
+    -o-transform:rotateY(-180deg);
+    backface-visibility:hidden;
+    box-shadow: 0 0 5px rgba(0,0,0,.09);
+    transition: transform 0.6s ease-in-out 0.6s;
+    -o-transition: transform 0.6s ease-in-out 0.6s;
+    -webkit-transition: transform 0.6s ease-in-out 0.6s;
+
+}
+
+img {
+    width:230px;
+    height:230px;
+    margin:15px;
+}
+
+p {
+    text-align: center;
+}
+
+.back>p{
+    font-size: 18px;
+    text-align: center;
+    margin-top:20px;
+}
+
+.back>span{
+    text-indent: 32px;
+    display: block;
+    margin:20px 20px;
+    line-height: 22px;
+}
+
+.contrl-botton {
+    position: absolute;
+    width:300px;
+    height:30px;
+}
+
+.img {
+    display: inline-block;
+    margin:0 6.6px;
+    width:15.4px;
+    height:15.4px;
+    cursor:pointer;
+    border-radius: 50%;
+    vertical-align: middle;
+    background:#888;
+    transition:transform .3s ease-in-out .3s,background .6s ease-in-out .6s;
+    -moz-transition:transform .3s ease-in-out .3s,background .6s ease-in-out .6s;
+    -webkit-transition:transform .3s ease-in-out .3s,background .6s ease-in-out .6s;
+    -o-transition:transform .3s ease-in-out .3s,background .6s ease-in-out .6s;
+}
+
+.img.center {
+    margin:0 2.5px;
+    width:22px;
+    height:22px;
+    background: #666 url(../Images/arrow.svg) no-repeat;
+    transition:transform .6s ease-in-out .6s,bachground .6s ease-in-out .6s
+}
