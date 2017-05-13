@@ -2,14 +2,43 @@
  * Created by yunxiao on 2017/5/12.
  */
 
+function Center() {
+    var screenWidth = window.innerWidth;                                           //获取浏览器显示范围宽度
+    var screenHeight = window.innerHeight;                                         //获取浏览器显示范围高度
+    $('.contrl-botton').css({
+        left: screenWidth / 2 - 135,
+        top: screenHeight - 100
+    });
+
+    $('.hero.center').css({                                               //居中显示带有center类名的元素
+        left: screenWidth / 2 - 120,
+        top: screenHeight / 2 - 150,
+        transform:"rotate(0deg)"
+    })
+}
+
+$(function () {
+   Center();
+});
+
 var screenWidth = window.innerWidth;                                           //获取浏览器显示范围宽度
 var screenHeight = window.innerHeight;                                         //获取浏览器显示范围高度
+
 
 $(function () {
     $('.wutai').css({
         width: screenWidth,
         height: screenHeight
     });
+
+    $('.hero').each(function () {
+        $(this).css({
+            left: screenWidth / 2 - 120,
+            top: screenHeight / 2 - 150,
+            transform: 'rotate(0deg)'
+        });
+    });
+
     $('.contrl-botton').css({
         left: screenWidth / 2 - 135,
         top: screenHeight - 100
@@ -40,29 +69,10 @@ function Change() {
                 transform: "rotate(" + imgTrans + ")"
             })
         }
-
-        $('.contrl-botton').css({
-            left: screenWidth / 2 - 135,
-            top: screenHeight - 100
-        });
-
-        $('.hero.center').css({                                               //居中显示带有center类名的元素
-            left: screenWidth / 2 - 120,
-            top: screenHeight / 2 - 150,
-            transform: 'rotate(0deg)'
-        });
+        Center();
     })
 }
 
-$(function () {                                                              //初始化所有图片居中显示
-    $('.hero').each(function () {
-        $(this).css({
-            left: screenWidth / 2 - 120,
-            top: screenHeight / 2 - 150,
-            transform: 'rotate(0deg)'
-        });
-    })
-});
 
 /*3.点击图片后随机分布*/
 
@@ -81,8 +91,8 @@ $(function () {
                     transform: "rotateY(0deg)"
                 });
                 $('.img.center').css({
-                    transform:"rotateY(0)"
-                })
+                    transform: "rotateY(0)"
+                });
             }
             var $this = $('.center');
             var num = $(this).index();                                    //鼠标点击为中心图片则翻转，不是则重新排布图片位置并居中被点击图片
@@ -103,8 +113,9 @@ $(function () {
                     transform: "rotateY(0deg)"
                 });
                 $('.img.center').css({
-                    transform:"rotateY(180deg)"
+                    transform: "rotateY(180deg)"
                 });
+                Center();
                 i = false;
             } else {
                 $this2.children('.back').css({
@@ -114,8 +125,9 @@ $(function () {
                     transform: "rotateY(0deg)"
                 });
                 $('.img.center').css({
-                    transform:"rotateY(0deg)"
+                    transform: "rotateY(0deg)"
                 });
+                Center();
                 i = true;
             }
         }
