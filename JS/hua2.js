@@ -20,7 +20,8 @@ $(function () {
 
 function Change() {
     $('.hero:not(.center)').each(function () {
-
+        var screenWidth = window.innerWidth;                                           //获取浏览器显示范围宽度
+        var screenHeight = window.innerHeight;
         var imgLeftL = (screenWidth / 2 - 390) * Math.random();
         var imgLeftR = (screenWidth / 2 - 390) * Math.random() + screenWidth / 2 + 130;  //计算非中心图片可显示区域
         var imgTop = (screenHeight - 140) * Math.random() - 70;
@@ -39,6 +40,11 @@ function Change() {
                 transform: "rotate(" + imgTrans + ")"
             })
         }
+
+        $('.contrl-botton').css({
+            left: screenWidth / 2 - 135,
+            top: screenHeight - 100
+        });
 
         $('.hero.center').css({                                               //居中显示带有center类名的元素
             left: screenWidth / 2 - 120,
