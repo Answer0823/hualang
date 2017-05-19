@@ -100,7 +100,8 @@ $(function () {
             $(heros[num]).addClass('center');
             $(images[num]).addClass('center');
             $('.contrl-botton').fadeIn(600);
-
+            
+            i = ture;
             Change();
 
         } else {                                                           //剧终图片循环反转
