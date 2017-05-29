@@ -10,20 +10,19 @@ function Center() {
         top: screenHeight - 100
     });
 
-    $('.hero.center').css({                                               //居中显示带有center类名的元素
+    $('.hero.center').css({                                                         //居中显示带有center类名的元素
         left: screenWidth / 2 - 120,
         top: screenHeight / 2 - 150,
-        transform:"rotate(0deg)"
-    })
+        transform:"rotateX(0deg)"
+    });
 }
 
 $(function () {
-   Center();
+    Center();
 });
 
 var screenWidth = window.innerWidth;                                           //获取浏览器显示范围宽度
 var screenHeight = window.innerHeight;                                         //获取浏览器显示范围高度
-
 
 $(function () {
     $('.wutai').css({
@@ -60,7 +59,7 @@ function Change() {
             $(this).css({
                 left: screenWidth * Math.random(),
                 top: imgTop,
-                transform: "rotate(" + imgTrans + ")"
+                transform: "rotateX(" + imgTrans + ")"
             })
         } else {
             $(this).css({
@@ -100,8 +99,8 @@ $(function () {
             $(heros[num]).addClass('center');
             $(images[num]).addClass('center');
             $('.contrl-botton').fadeIn(600);
-            
-            i = ture;
+
+            i=true;
             Change();
 
         } else {                                                           //剧终图片循环反转
@@ -116,7 +115,6 @@ $(function () {
                 $('.img.center').css({
                     transform: "rotateY(180deg)"
                 });
-                Center();
                 i = false;
             } else {
                 $this2.children('.back').css({
@@ -128,12 +126,9 @@ $(function () {
                 $('.img.center').css({
                     transform: "rotateY(0deg)"
                 });
-                Center();
                 i = true;
             }
         }
     })
 });
-
-/*图片控制按钮*/
 
